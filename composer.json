@@ -13,7 +13,7 @@
     "minimum-stability": "dev",
     "require": {
         "yiisoft/yii2": "*",
-        "ajaxorg/ace-builds" : "*"
+        "lav45/ace-builds" : "*"
     },
     "autoload": {
         "psr-4": { "lav45\\aceEditor\\": "" }
