@@ -15,12 +15,6 @@ Either of your `composer.json` file
 
 ```json
     "minimum-stability": "dev",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/LAV45/ace-builds.git"
-        }
-    ],
     "require": {
         "lav45/yii2-aceeditor": "dev-master"
     }

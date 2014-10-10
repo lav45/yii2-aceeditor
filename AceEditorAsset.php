@@ -14,7 +14,7 @@ class AceEditorAsset extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $sourcePath = '@vendor/lav45/ace-builds/src-min-noconflict';
+    public $sourcePath = '@vendor/bower/ace-builds/src-min-noconflict';
 
     /**
      * @inheritdoc

@@ -12,8 +12,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "yiisoft/yii2": "*",
-        "lav45/ace-builds" : "*"
+        "yiisoft/yii2": "dev-master",
+        "bower-asset/ace-builds" : "dev-master"
     },
     "autoload": {
         "psr-4": { "lav45\\aceEditor\\": "" }
