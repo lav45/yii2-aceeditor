@@ -439,7 +439,7 @@ class AceEditorWidget extends InputWidget
     {
         $this->_read_only = $value;
         $value = var_export($value, true);
-        $this->addSettings("editor.setReadOnly($value);");
+        $this->addSettings("editor.setOption('readOnly', $value);");
     }
 
     /**
@@ -450,6 +450,34 @@ class AceEditorWidget extends InputWidget
     {
         $value = var_export($value, true);
         $this->addSettings("editor.setOption('scrollPastEnd', $value);");
+    }
+
+    /**
+     * Auto Scroll Editor Into View
+     * @param $value boolean
+     */
+    public function setAutoScrollEditorIntoView($value)
+    {
+        $value = var_export($value, true);
+        $this->addSettings("editor.setOption('autoScrollEditorIntoView', $value);");
+    }
+
+    /**
+     * Max Lines View
+     * @param $value integer
+     */
+    public function setMaxLines($value)
+    {
+        $this->addSettings("editor.setOption('maxLines', $value);");
+    }
+
+    /**
+     * Min Lines View
+     * @param $value integer
+     */
+    public function setMinLines($value)
+    {
+        $this->addSettings("editor.setOption('minLines', $value);");
     }
 
     /**
@@ -509,8 +537,8 @@ class AceEditorWidget extends InputWidget
                 var text = $('#{$this->options['id']}-container');
                 var editor = ace.edit('{$this->options['id']}');
 
-                editor.getSession().setValue(text.val());
-                editor.getSession().on('change', function(){
+                editor.session.setValue(text.val());
+                editor.session.on('change', function(){
                     text.val(editor.getSession().getValue());
                 });
 
