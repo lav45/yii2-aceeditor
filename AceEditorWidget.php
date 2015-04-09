@@ -34,6 +34,14 @@ use yii\widgets\InputWidget;
 class AceEditorWidget extends InputWidget
 {
     /**
+     * @var string
+     */
+    public $value = '';
+    /**
+     * @var string
+     */
+    public $name = '';
+    /**
      * @var string JS Settings for AceEditor
      */
     private $_editorSettings;
