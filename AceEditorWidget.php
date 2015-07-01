@@ -509,16 +509,17 @@ class AceEditorWidget extends InputWidget
             Html::addCssStyle($this->options, "height: {$this->height}px;");
         }
 
-        $content = Html::tag('div', '', $this->options);
-
         $containerOptions = [
             'style' => 'display: none;',
-            'id' => $this->options['id'] . '-container'
+            'id' => $this->options['id']
         ];
 
         if ($this->_read_only !== false) {
             $containerOptions['readonly'] = '';
         }
+
+        $this->options['id'] .= '-container';
+        $content = Html::tag('div', '', $this->options);
 
         $content .= $this->hasModel() ?
             Html::activeTextarea($this->model, $this->attribute, $containerOptions) :
@@ -542,8 +543,8 @@ class AceEditorWidget extends InputWidget
     {
         $this->getView()->registerJs("
             (function($){
-                var text = $('#{$this->options['id']}-container');
-                var editor = ace.edit('{$this->options['id']}');
+                var text = $('#{$this->options['id']}');
+                var editor = ace.edit('{$this->options['id']}-container');
 
                 editor.session.setValue(text.val());
                 editor.session.on('change', function(){
