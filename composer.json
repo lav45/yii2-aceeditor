@@ -10,10 +10,10 @@
             "email": "lav451@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
-        "yiisoft/yii2": "dev-master",
-        "bower-asset/ace-builds" : "dev-master"
+        "yiisoft/yii2": "~2.0.6",
+        "bower-asset/ace-builds" : "~1.2"
     },
     "autoload": {
         "psr-4": { "lav45\\aceEditor\\": "" }
