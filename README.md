@@ -12,13 +12,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist lav45/yii2-aceeditor "*"
+php composer.phar require --prefer-dist lav45/yii2-aceeditor "1.1.*"
 ```
 
 or add
 
 ```json
-	"lav45/yii2-aceeditor": "*"
+	"lav45/yii2-aceeditor": "1.1.*"
 ```
 
 ## Usage
