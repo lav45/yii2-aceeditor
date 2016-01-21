@@ -10,7 +10,6 @@
             "email": "lav451@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
         "yiisoft/yii2": "2.0.*",
         "bower-asset/ace-builds" : "1.2.*"
