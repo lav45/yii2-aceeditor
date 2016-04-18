@@ -45,13 +45,11 @@ class AceEditorWidget extends InputWidget
      * @var string JS Settings for AceEditor
      */
     private $_editorSettings;
-
     /**
      * The height of the editor
      * @param integer
      */
     public $height = 300;
-
     /**
      * @var boolean
      */
@@ -295,7 +293,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setUseWrapMode($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.getSession().setUseWrapMode($value);");
     }
 
@@ -315,7 +313,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setHighlightActiveLine($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setHighlightActiveLine($value);");
     }
 
@@ -325,7 +323,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setShowInvisibles($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setShowInvisibles($value);");
     }
 
@@ -335,7 +333,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setDisplayIndentGuides($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setDisplayIndentGuides($value);");
     }
 
@@ -345,7 +343,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setHScrollBar($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setOption('hScrollBarAlwaysVisible', $value);");
     }
 
@@ -355,7 +353,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setVScrollBar($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setOption('vScrollBarAlwaysVisible', $value);");
     }
 
@@ -365,7 +363,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setAnimatedScroll($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setAnimatedScroll($value);");
     }
 
@@ -375,7 +373,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setShowGutter($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.renderer.setShowGutter($value);");
     }
 
@@ -385,7 +383,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setShowPrintMargin($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.renderer.setShowPrintMargin($value);");
     }
 
@@ -395,7 +393,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setUseSoftTabs($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.session.setUseSoftTabs($value);");
     }
 
@@ -405,7 +403,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setHighlightSelectedWord($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setHighlightSelectedWord($value);");
     }
 
@@ -415,7 +413,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setBehavioursEnabled($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setBehavioursEnabled($value);");
     }
 
@@ -425,7 +423,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setFadeFoldWidgets($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setFadeFoldWidgets($value);");
     }
 
@@ -435,7 +433,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setUseElasticTabstops($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setOption('useElasticTabstops', $value);");
     }
 
@@ -445,7 +443,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setUseIncrementalSearch($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setOption('useIncrementalSearch', $value);");
     }
 
@@ -456,7 +454,7 @@ class AceEditorWidget extends InputWidget
     public function setReadOnly($value)
     {
         $this->_read_only = $value;
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setOption('readOnly', $value);");
     }
 
@@ -466,7 +464,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setScrollPastEnd($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setOption('scrollPastEnd', $value);");
     }
 
@@ -476,7 +474,7 @@ class AceEditorWidget extends InputWidget
      */
     public function setAutoScrollEditorIntoView($value)
     {
-        $value = var_export($value, true);
+        $value = $this->getBoolValue($value);
         $this->addSettings("editor.setOption('autoScrollEditorIntoView', $value);");
     }
 
@@ -496,6 +494,15 @@ class AceEditorWidget extends InputWidget
     public function setMinLines($value)
     {
         $this->addSettings("editor.setOption('minLines', $value);");
+    }
+
+    /**
+     * @param int|bool $value
+     * @return string
+     */
+    protected function getBoolValue($value)
+    {
+        return var_export((bool)$value, true);
     }
 
     /**
