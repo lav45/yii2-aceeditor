@@ -290,6 +290,16 @@ class AceEditorWidget extends InputWidget
     }
 
     /**
+     * To toggle word wrapping
+     * @param $value boolean
+     */
+    public function setUseWrapMode($value)
+    {
+        $value = var_export($value, true);
+        $this->addSettings("editor.getSession().setUseWrapMode($value);");
+    }
+
+    /**
      * Full Line Selection
      * @param $value boolean
      */
