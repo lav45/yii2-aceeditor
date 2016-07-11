@@ -14,10 +14,12 @@ class AceEditorAsset extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $sourcePath = '@vendor/bower/ace-builds/src-min-noconflict';
+    public $sourcePath = '@bower/ace-builds/src-min-noconflict';
 
     /**
      * @inheritdoc
      */
-    public $js = ['ace.js'];
+    public $js = [
+        'ace.js'
+    ];
 }
