@@ -12,14 +12,20 @@
     ],
     "require": {
         "yiisoft/yii2": "2.0.*",
-        "bower-asset/ace-builds" : "1.2.*"
+        "bower-asset/ace-builds" : "1.4.*"
     },
     "autoload": {
         "psr-4": { "lav45\\aceEditor\\": "" }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1.x-dev"
+            "dev-master": "1.2.x-dev"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
 }

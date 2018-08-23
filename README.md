@@ -12,35 +12,35 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist lav45/yii2-aceeditor "1.1.*"
+php composer.phar require --prefer-dist lav45/yii2-aceeditor "1.2.*"
 ```
 
 or add
 
 ```json
-	"lav45/yii2-aceeditor": "1.1.*"
+"lav45/yii2-aceeditor": "1.2.*"
 ```
 
 ## Usage
 
 ### How to call?
 ```php
-	use lav45\aceEditor\AceEditorWidget;
+use lav45\aceEditor\AceEditorWidget;
 
-	echo $form->field($model, 'content')->widget(AceEditorWidget::className(), [
-        'theme' => 'xcode',
-        'mode' => 'html',
-        'showPrintMargin' => false,
-        'fontSize' => 14,
-        'height' => 300,
-        'options' => [
-            'style' => 'border: 1px solid #ccc; border-radius: 4px;'
-        ]
- 	]);
+echo $form->field($model, 'content')->widget(AceEditorWidget::className(), [
+    'theme' => 'xcode',
+    'mode' => 'html',
+    'showPrintMargin' => false,
+    'fontSize' => 14,
+    'height' => 300,
+    'options' => [
+        'style' => 'border: 1px solid #ccc; border-radius: 4px;'
+    ]
+]);
 
-	// Ace editor without model
-	echo AceEditorWidget::widget([
-		'name' => 'description',
-		'value' => 'same text',
-	]);
+// Ace editor without model
+echo AceEditorWidget::widget([
+    'name' => 'description',
+    'value' => 'same text',
+]);
 ```
